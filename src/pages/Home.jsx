@@ -100,7 +100,6 @@ const Home = () => {
               onClick={() => pagination()}
             >
               More movies...
-              {/* <MdMoreHoriz color="black"/> */}
             </button>
           </div>
           <div className="w-full bg-gray-900 h-64"></div>
