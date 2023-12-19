@@ -6,8 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Search_multi, setSearchPage, setstr } from "../service/movieSlice";
 
 const searchSection = ({ toggle, setToggle }) => {
-  const page = useSelector((state) => state.movieData.searchPage);
-  // const page = 1;
+  const page = 1;
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
@@ -24,8 +23,8 @@ const searchSection = ({ toggle, setToggle }) => {
   const searchNow = (e) => {
     e.preventDefault();
     dispatch(setstr(input));
-    dispatch(Search_multi([input,page]));
-    dispatch(setSearchPage());
+    dispatch(Search_multi([input, page]));
+    dispatch(setSearchPage(page));
     navigate(`/searchMulti/str:${input}`);
     setInput("");
   };

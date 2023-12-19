@@ -2,7 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { MovieCard } from "../components";
-import { Search_multi, setFilterData, setRoute, setSearchPage } from "../service/movieSlice";
+import {
+  Search_multi,
+  setFilterData,
+  setRoute,
+  setSearchPage,
+} from "../service/movieSlice";
 
 const SearchMovie = () => {
   const searchData = useSelector((state) => state.movieData.search);
@@ -20,8 +25,8 @@ const SearchMovie = () => {
 
   const pagination = () => {
     dispatch(Search_multi([input, page]));
-    dispatch(setSearchPage());
-    dispatch(setFilterData(searchData))
+    dispatch(setSearchPage(page + 1));
+    dispatch(setFilterData(searchData));
   };
 
   return (
@@ -42,9 +47,6 @@ const SearchMovie = () => {
                   to={`/MovieDetailes/id:${Route}`}
                   key={i.id}
                   onMouseOver={() => setPathRoute(i.id)}
-                  // onClick={() => {
-                  //   handleDetaile(i.id);
-                  // }}
                 >
                   <MovieCard data={i} imgUrl={ImgUrl} />
                 </Link>

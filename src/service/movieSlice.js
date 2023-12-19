@@ -77,8 +77,9 @@ export const movieSlice = createSlice({
     setUpcomingPage: (state) => {
       state.upComingPage = state.upComingPage - 1;
     },
-    setSearchPage: (state) => {
-      state.searchPage = state.searchPage + 1;
+    setSearchPage: (state, action) => {
+      if (action) state.searchPage = action.payload;
+      else state.searchPage = state.searchPage + 1;
     },
     setFilterData: (state, action) => {
       state.filter = action.payload;
@@ -290,6 +291,7 @@ export const movieSlice = createSlice({
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
+        console.log(action.payload);
         let check = false;
         for (let i = 0; i <= state.str; i++) {
           if (state.str[0] === action.payload[0].name[i]) return (check = true);

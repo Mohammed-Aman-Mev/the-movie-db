@@ -5,13 +5,17 @@ import { useSelector } from "react-redux";
 const Filter = ({ open, checkSetopen }) => {
   const data = useSelector((state) => state.movieData.filter);
 
+  const filter = (e) => {
+    e.preventDefault();
+    
+  };
   return (
     <div
       className={`${open} pt-3 sm:p-5 bg-gray-900 items-center bg-gradient-to-b from-gray-950 rounded-lg top-0 w-full z-20 rounded-b-xl flex-col bg-transparent px-auto fixed h-full`}
     >
       <div className="bg-gray-900 text-white w-[100vw] p-2 rounded-b-xl bg-opacity-70 mx-auto sm:w-[70%]">
         <div className="p-4">
-          <form action="">
+          <form action="" onSubmit={filter}>
             <label htmlFor="HTML" className="flex justify-between">
               Title:
             </label>

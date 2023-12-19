@@ -84,7 +84,7 @@ const Home = () => {
           </h1>
           <div
             ref={ref}
-            className="bg-black p-5 w-[100%] grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            className="bg-black p-5 w-[100%] grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5"
           >
             {trendingMovies.length === 0 ? (
               <h1 className="text-emerald-400 text-center text-7xl w-[200px] mx-auto mt-[100px]">
