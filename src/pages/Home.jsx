@@ -22,8 +22,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
-  // const [page, setPage] = useState(1);
-
   const pagination = () => {
     dispatch(setTrendingMoviesPage());
     page++;
@@ -51,9 +49,6 @@ const Home = () => {
           to={`/MovieDetailes/id:${Route}`}
           key={i.id}
           onMouseOver={() => setPathRoute(i.id)}
-          // onClick={() => {
-          //   handleDetaile(i.id);
-          // }}
         >
           <MovieCard data={i} imgUrl={ImgUrl} />
         </Link>
@@ -64,9 +59,6 @@ const Home = () => {
           to={`/TvShowDetailes/id:${Route}`}
           key={i.id}
           onMouseOver={() => setPathRoute(i.id)}
-          // onClick={() => {
-          //   handleDetaile(i.id);
-          // }}
         >
           <MovieCard data={i} imgUrl={ImgUrl} />
         </Link>

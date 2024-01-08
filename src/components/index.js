@@ -7,6 +7,7 @@ import Filter from "./Filter";
 import NowPlaying from "./NowPlaying";
 import Movie from "../pages/Movie";
 import VideoPlay from "./VideoPlay";
+import LinkandPage from "./LinkandPage";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   NowPlaying,
   Movie,
   VideoPlay,
+  LinkandPage,
 };
