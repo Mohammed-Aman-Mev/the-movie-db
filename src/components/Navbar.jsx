@@ -9,7 +9,7 @@ import LinkandPage from "./LinkandPage";
 
 const Navbar = ({ setToggle, checkSetopen }) => {
   return (
-    <nav className="z-20 w-[100%] h-[70px] flex rounded-b-xl items-center justify-between px-2 sm:px-5 text-xl m-0 sticky top-0 bg-black p-3 xl:h-[100px]">
+    <nav className="z-20 w-[100%] h-[50px] flex rounded-b-xl items-center justify-between px-2 sm:px-5 text-xl m-0 sticky top-0 bg-black p-3 xl:h-[100px]">
       <div className="w-auto flex">
         <div className="">
           <button

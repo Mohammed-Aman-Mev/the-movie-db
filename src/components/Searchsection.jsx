@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { Search_multi, setSearchPage, setstr } from "../service/movieSlice";
+import { pathandPage } from "./constant";
+import LinkandPage from "./LinkandPage";
 
 const searchSection = ({ toggle, setToggle }) => {
   const page = 1;
@@ -31,7 +33,7 @@ const searchSection = ({ toggle, setToggle }) => {
 
   return (
     <div
-      className={`${toggle} p-5 bg-gray-900 items-center bg-gradient-to-b from-gray-950 rounded-lg top-0 w-full z-10 flex-col bg-transparent px-auto fixed h-full mt-8`}
+      className={`${toggle} p-5 bg-gray-900 items-center bg-gradient-to-b from-gray-950 rounded-lg top-0 w-full z-20 flex-col bg-transparent px-auto fixed h-full mt-8`}
       onClick={(e) => set_Toggle(e)}
     >
       <div className="w-[90%] bg-gray-950 mx-auto rounded-lg p-3 bg-opacity-70 sm:w-[60%] md:w-[50%] lg:w-[40%]">
@@ -70,30 +72,9 @@ const searchSection = ({ toggle, setToggle }) => {
             >
               <li className="font-bold">Popular</li>
             </NavLink>
-            <NavLink
-              to={"/Movie"}
-              className={({ isActive, isPending }) =>
-                isActive ? "text-white" : "text-gray-500"
-              }
-            >
-              <li className="font-bold">Movie</li>
-            </NavLink>
-            <NavLink
-              to={"/Upcoming"}
-              className={({ isActive, isPending }) =>
-                isActive ? "text-white" : "text-gray-500"
-              }
-            >
-              <li className="font-bold">Upcoming</li>
-            </NavLink>
-            <NavLink
-              to={"/TvShows"}
-              className={({ isActive, isPending }) =>
-                isActive ? "text-white" : "text-gray-500"
-              }
-            >
-              <li className="font-bold">TV shows</li>
-            </NavLink>
+            {pathandPage.map((item, ind) => (
+              <LinkandPage item={item} key={ind} />
+            ))}
             <div className="pt-5 w-4">
               <IoMdCloseCircleOutline color="white" size={"30px"} />
             </div>
