@@ -50,7 +50,7 @@ const MovieDetailes = () => {
           <div
             className={
               togglePlayer === false
-                ? "flex items-center justify-center w-full h-[500px] sm-h-[50%]"
+                ? "flex items-center justify-center w-full h-[100vh] sm-h-[50%]"
                 : "hidden"
             }
           >
@@ -65,7 +65,7 @@ const MovieDetailes = () => {
             )}
           </div>
           <div
-            className="text-emerald-500 text-xl w-full h-[500px] bg-no-repeat bg-cover bg-center p-3"
+            className="text-emerald-500 text-xl w-full bg-no-repeat bg-cover bg-center p-3"
             style={{
               backgroundImage: `url(${ImageUrl + movieDetaile.poster_path})`,
             }}
